@@ -10,33 +10,76 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div class="container">  
+    <div class="container">
         <h1>BMI Calculator</h1>
-        <label for="g-input">Gender:</label>
-        <select id="g-input" required>
-            <option value="">Select Gender</option>
-            <option value="Laki-Laki">Men</option>
-            <option value="Wanita">Women</option>
-        </select>
-        <label for="a-input">Age:</label>
-        <input id="a-input" type="number" placeholder="Insert Your Age" required>
-        
-        <label for="h-input">Height (cm):</label>
-        <input id="h-input" type="number" placeholder="Insert Your Height" required>
-        
-        <label for="w-input">Weight (kg):</label>
-        <input id="w-input" type="number" placeholder="Insert Your Weight" required>  
-        
-        <button type="submit" onclick="Calculate()">Calculate BMI</button>
-            
-        <div class="bmi-value result">
-            <h4>Your BMI:</h4>
-            <div id="bmi-output"></div>
+  
+        <form class="calculator">
+          <div>
+            <label for="age">Age</label>
+            <input type="text" id="age">
+          </div>
+          <div class="gender">
+
+            <label class="container">
+                <input type="radio" name="radio" id="m"><p class="text">Male</p>
+                <span class="checkmark"></span>
+              </label>
+
+            <label class="container">
+                <input type="radio" name="radio" id="f" ><p class="text">Female</p>
+                  <span class="checkmark"></span>
+                </label>
+          </div>
+
+          <div>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" min="0" step="0.01" value="0" />
+          </div>
+  
+          <div>
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" min="0" step="0.01" value="0" />
+          </div>
+  
+          <div>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>  
+
+          <section class="output">
+            <h3>Your BMI is</h3>
+            <p id="bmi">0</p>
+            <p id="desc">N/A</p>
+          </section>
+
+          <section class="bmi-scale">
+            <div style="--color: var(--underweight)">
+              <h4>Underweight</h4>
+              <p>&lt; 18.5</p>
+            </div>
+    
+            <div style="--color: var(--normal)">
+              <h4>Normal</h4>
+              <p>18.5 – 25</p>
+            </div>
+    
+            <div style="--color: var(--overweight)">
+              <h4>Overweight</h4>
+              <p>25 – 30</p>
+            </div>
+    
+            <div style="--color: var(--obese)">
+              <h4>Obese</h4>
+              <p>≥ 30</p>
+            </div>
+          </section>
+    
+
         </div>
-        <div class="status result">
-            <h4>Status:</h4>
-            <div id="bmi-status"></div>
-        </div>   
-    </div>
+      </div>
+
+ <script src="js/script.js"></script>
+
 </body>
 </html>
